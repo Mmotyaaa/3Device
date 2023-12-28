@@ -1,0 +1,431 @@
+html * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #F1F4F2;
+}
+
+
+/*-- стили для гридов */
+
+.layout {
+    width: 100%;
+    height: 1080px;
+    display: grid;
+    grid: "header" auto "main" 1fr "footer" auto / 1fr;
+}
+
+.header {
+    grid-area: header;
+    background-color: #232E39;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+
+.main {
+    grid-area: main;
+}
+
+
+/* стили для шапки */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    margin-top: 3px;
+    margin-left: 87px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #F1F4F2;
+    margin-left: 36px;
+}
+
+.menu a:hover {
+    background-color: #F1F4F2;
+    color: #6DBF97;
+    border-radius: 10px;
+}
+
+.icons {
+    display: flex;
+    margin-right: 87px;
+}
+
+.icons a {
+    margin-left: 34px;
+    padding: 10px;
+}
+
+.icons a:hover {
+    background-color: #6DBF97;
+    border-radius: 10px;
+}
+
+
+/*-- стили для мейна */
+
+/*-- стили для фильтров*/
+
+.main-container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.smaller-part {
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+}
+
+.larger-part {
+    flex-grow: 2;
+    margin-left: 5%;
+}
+
+.filter {
+    width: 289px;
+    border-radius: 20px;
+    background-color: #708F80;
+}
+
+.filter1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 500px;
+    /* Задайте высоту контейнера по своему усмотрению */
+}
+
+.filter1>* {
+    margin-bottom: 20px;
+    /* Задайте желаемое расстояние между элементами */
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+}
+
+.image-container img {
+    float: left;
+    margin-right: 10px;
+    float: right;
+}
+
+.text-container {
+    font-size: 26px;
+    color: #F1F4F2;
+    font-weight: 600;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: transparent;
+    border: 1px solid #F1F4F2;
+    width: 212px;
+    height: 40px;
+    /* Задайте ширину контейнера по своему усмотрению */
+}
+
+select {
+    appearance: none;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    color: white;
+}
+
+select option {
+    padding: 10px;
+    background-color: #6DBF97;
+    /* Задаем цвет фона для вариантов списка */
+    color: #F1F4F2;
+    /* Устанавливаем белый цвет текста для вариантов списка */
+}
+
+.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+}
+
+
+/* Стилизация опций (вариантов) */
+
+select option {
+    padding: 10px;
+}
+
+
+/* Стилизация выбранного варианта */
+
+select option:checked {
+    background-color: #708F80;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid white;
+    /* Устанавливаем белый бордер */
+    border-radius: 20px;
+    /* Устанавливаем закругленные края */
+    background-color: transparent;
+    /* Устанавливаем прозрачный фон */
+    color: white;
+    /* Устанавливаем серый цвет текста */
+    font-size: 16px;
+    width: 212px;
+    height: 40px;
+}
+
+.input-field::placeholder {
+    color: rgba(241, 244, 242, 0.70);
+    /* Устанавливаем цвет текста с прозрачностью 70% */
+}
+
+
+/*-- стили для товаров*/
+
+.cards {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1170px;
+    /* Ширина grid-контейнера */
+    justify-content: start;
+    justify-items: center;
+    /* Размещаем карточку по центру */
+    column-gap: 25px;
+    /* Отступ между колонками */
+    row-gap: 35px;
+    /* Отступ между рядами */
+    margin: 0;
+}
+
+.card {
+    width: 220px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #F1F4F2;
+    display: flex;
+    flex-direction: column;
+    /* Размещаем элементы в колонку */
+    border-radius: 20px;
+    transition: 0.2s;
+    position: relative;
+}
+
+
+/* При наведении на карточку - меняем цвет тени */
+
+.card:hover {
+    box-shadow: 4px 8px 16px #708F80;
+}
+
+.card__top {
+    flex: 0 0 217px;
+    /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden;
+    /* Скрываем, что выходит за пределы */
+}
+
+
+/* Контейнер для картинки */
+
+.card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card__image>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Встраиваем картинку в контейнер card__image */
+    transition: 0.2s;
+}
+
+
+/* При наведении - увеличиваем картинку */
+
+.card__image:hover>img {
+    transform: scale(1.1);
+}
+
+.card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+}
+
+.card__prices {
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 19px;
+    flex: 0 0 50%;
+    text-align: center;
+    align-items: center;
+}
+
+.card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #232E39;
+    font-family: "MADE Evolve Sans";
+    font-size: 17px;
+}
+
+.card__title:hover {
+    color: #6DBF97;
+}
+
+.card__add {
+    display: block;
+    width: 50%;
+    height: 36px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #F1F4F2;
+    text-align: center;
+    background-color: #708F80;
+    border-radius: 20px;
+    cursor: pointer;
+    /* Меняем курсор при наведении */
+    transition: 0.2s;
+    margin-left: 15px;
+}
+
+.card__add:hover {
+    background-color: #6DBF97;
+    color: #F1F4F2;
+}
+
+
+/*-- стили для подвала */
+
+.footer {
+    grid-area: footer;
+    margin-top: 63px;
+    background-color: #232E39;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.logo_footer img {
+    margin-top: 17px;
+    margin-bottom: 22px;
+}
+
+.linia {
+    background-color: #F1F4F2;
+    width: 3px;
+    height: 218px;
+    margin-left: 58px;
+    margin-right: 58px;
+    align-items: center;
+}
+
+.footer p {
+    color: #F1F4F2;
+}
+
+.phone_text {
+    color: #F1F4F2;
+    font-size: 20px;
+}
+
+.contact {
+    margin-top: 15px;
+}
+
+.contact_nazvanie {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 24px;
+}
+
+.image_phone {
+    width: 25px;
+    height: 25px;
+}
+
+.social_media a {
+    margin-right: 15px;
+}
+
+.social_media {
+    margin-bottom: 70px;
+}
+
+.under_text a {
+    color: #3B96FF;
+}
+
+.under_text {
+    margin-top: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}

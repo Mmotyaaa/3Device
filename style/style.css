@@ -1,0 +1,474 @@
+@font-face {
+    font-family: "MADE Evolve Sans";
+    src: url("font/MADE Evolve Sans Medium (PERSONAL USE).otf");
+}
+
+html * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #F1F4F2;
+    font-family: "MADE Evolve Sans";
+}
+
+/*-- стили для гридов */
+.layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1080px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #232E39;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+
+.main {
+    grid-area: main;
+}
+
+/* стили для шапки */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    margin-top: 3px;
+    margin-left: 87px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #F1F4F2;
+    margin-left: 36px;
+}
+
+.menu a:hover {
+    background-color: #F1F4F2;
+    color: #6DBF97;
+    border-radius: 10px;
+}
+
+.icons {
+    display: flex;
+    margin-right: 87px;
+}
+
+@media screen and (max-width: 720px){
+    .icons a{
+        margin: 0;
+    }
+}
+
+
+.icons a {
+    margin-left: 34px;
+    padding: 10px;
+}
+
+.icons a:hover {
+    background-color: #6DBF97;
+    border-radius: 10px;
+}
+
+html * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/*-- стили для мейна */
+i {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 484px;
+    overflow: hidden;
+}
+
+i:before,
+i:after {
+    content: '←';
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    z-index: 2;
+    width: 3rem;
+    height: 3rem;
+    background: #6DBF97;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+i:after {
+    content: '→';
+    left: auto;
+    right: 1rem;
+}
+
+input {
+    appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(100%);
+    transition: transform ease-in-out 400ms;
+    z-index: 1;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:not(checked):before {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 50%;
+    left: calc(-100% + 1rem);
+}
+
+input:checked:before {
+    display: none;
+    left: 1rem;
+}
+
+input:checked {
+    transform: translateX(0);
+    z-index: 0;
+    box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+}
+
+input:checked+input:before {
+    left: -3rem;
+}
+
+input:checked+input~input:before {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 63px;
+    margin-bottom: 63px;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
+    height: 270px;
+    background-color: #D9D9D9;
+    font-family: "MADE Evolve Sans";
+    padding: 34px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.box:hover{
+    box-shadow: 4px 8px 16px rgba(63, 63, 63, 0.25);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+  width: 114px;
+  height: 186px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+
+.text {
+    flex-grow: 1;
+    color: #232E39;
+    text-align: center;
+    font-size: 37px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.image2 {
+    width: 47px;
+    height: 189px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-left: 72px;
+}
+
+.image3 {
+    width: 133px;
+    height: 155px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-left: 12px;
+}
+
+.image4 {
+    width: 189px;
+    height: 173px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.text::first-letter {
+    font-size: 40px; 
+    font-weight: bold; 
+}
+
+.new{
+    background-color: #232E39;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.new p{
+    font-size: 50px;
+    color: #F1F4F2;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/*-- стили для товаров*/
+.cards {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1300px; /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center; /* Размещаем карточку по центру */
+    column-gap: 25px; /* Отступ между колонками */
+    row-gap: 35px; /* Отступ между рядами */
+    margin: 0 auto;
+  }
+
+.card {
+  width: 240px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #F1F4F2;
+  display: flex;
+  flex-direction: column; /* Размещаем элементы в колонку */
+  border-radius: 20px;
+  transition: 0.2s;
+  position: relative;
+}
+
+/* При наведении на карточку - меняем цвет тени */
+.card:hover {
+  box-shadow: 4px 8px 16px #708F80;
+}
+
+.card__top {
+  flex: 0 0 217px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+  position: relative;
+  overflow: hidden; /* Скрываем, что выходит за пределы */
+
+}
+
+/* Контейнер для картинки */
+.card__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+  transition: 0.2s;
+}
+
+/* При наведении - увеличиваем картинку */
+.card__image:hover > img {
+  transform: scale(1.1);
+}
+
+.card__bottom {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+  padding: 10px;
+}
+
+.card__prices {
+  display: flex;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 21px;
+  flex: 0 0 50%;
+  text-align: center;
+  align-items: center;
+}
+
+.card__title {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+
+
+  color: #232E39;
+
+  font-family: "MADE Evolve Sans";
+  font-size: 17px;
+}
+
+.card__title:hover {
+  color: #6DBF97;
+}
+
+.card__add {
+  display: block;
+  width: 50%;
+  height: 36px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #F1F4F2;
+  text-align: center;
+  background-color: #708F80;
+  border-radius: 20px;
+  cursor: pointer; /* Меняем курсор при наведении */
+  transition: 0.2s;
+  margin-left: 15px;
+  
+}
+
+.card__add:hover {
+  background-color: #6DBF97;
+  color: #F1F4F2;
+}
+
+/*-- стили для подвала */
+.footer {
+    flex: 1 1 auto;
+    grid-area: footer;
+    margin-top: 63px;
+    background-color: #232E39;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.logo_footer img{
+     margin-top: 17px;
+     margin-bottom: 22px;
+}
+
+@media screen and (max-width: 720px){
+    .logo_footer img{
+        display: none;
+   }
+}
+
+.linia{
+    background-color: #F1F4F2;
+    width: 3px;
+    height: 218px;
+    margin-left: 58px;
+    margin-right: 58px;
+    align-items: center;
+}
+
+
+.footer p{
+    color: #F1F4F2;
+}
+
+.phone_text{
+    color: #F1F4F2;
+    font-size: 20px;
+}
+
+.contact{
+    margin-top: 15px;
+}
+
+.contact_nazvanie{
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 24px;
+}
+
+.image_phone{
+    width: 25px;
+    height: 25px;
+}
+
+.social_media a{
+    margin-right: 15px;
+}
+
+.social_media {
+    margin-bottom: 70px;
+}
+
+.under_text a{
+    color: #3B96FF;
+}
+
+.under_text{
+    margin-top: 20px;
+}

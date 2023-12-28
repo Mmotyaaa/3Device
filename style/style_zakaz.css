@@ -1,0 +1,296 @@
+html * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #F1F4F2;
+}
+
+/*-- стили для гридов */
+.layout {
+    width: 100%;
+    height: 1080px;
+    display: grid;
+    grid: "header" auto "main" 1fr "footer" auto / 1fr;
+}
+
+.header {
+    grid-area: header;
+    background-color: #232E39;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+
+.main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+}
+
+/* стили для шапки */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    margin-top: 3px;
+    margin-left: 87px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #F1F4F2;
+    margin-left: 36px;
+}
+
+.menu a:hover {
+    background-color: #F1F4F2;
+    color: #6DBF97;
+    border-radius: 10px;
+}
+
+.icons {
+    display: flex;
+    margin-right: 87px;
+}
+
+.icons a {
+    margin-left: 34px;
+    padding: 10px;
+}
+
+.icons a:hover {
+    background-color: #6DBF97;
+    border-radius: 10px;
+}
+
+/*-- стили для мейна */
+
+/*-- стили для названия и линии */
+.authorization {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.nazvanie{
+    font-weight: 700;
+    font-size: 50px;
+    margin-left: 305px;
+    margin-top: 45px;
+    color: #232E39;
+}
+
+.linia_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.linia_gor{
+    width: 90%;
+    height: 2px;
+    background-color: rgba(35, 46, 57, 0.30);
+}
+
+.naimenovanie li{
+    display: inline-block;
+}
+
+/*-- стили для товара в корзине */
+.korzina{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+}
+
+.tovar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.product {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin-top: 20px;
+    color: #232E39;
+    justify-content: space-evenly;
+}
+
+.product-image {
+    flex: 0 0 100px;
+    margin-right: 20px;
+}
+
+.product-image img {
+    width: 150px;
+    height: auto;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-details h2 {
+    margin: 0;
+    max-width: 282px;
+}
+
+.product-details p {
+    margin: 5px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.product-quantity {
+    align-items: center;
+    flex: 0 0 100px;
+    text-align: center;
+    display: flex;
+}
+
+.product-quantity input {
+    width: 50px;
+    text-align: center;
+}
+
+.buttons {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    margin-top: auto;
+}
+
+.total-price {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: #232E39;
+}
+
+.total-price p {
+    margin-right: 20px;
+}
+
+.button{
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #B05744; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 20px; /* Скругляем уголки */
+    font-size: 20px;
+    font-weight: 600;
+    width: auto;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #c8634d;
+}
+
+
+
+/*-- стили для подвала */
+.footer {
+    grid-area: footer;
+    margin-top: 63px;
+    background-color: #232E39;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.logo_footer img{
+     margin-top: 17px;
+     margin-bottom: 22px;
+}
+
+.linia{
+    background-color: #F1F4F2;
+    width: 3px;
+    height: 218px;
+    margin-left: 58px;
+    margin-right: 58px;
+    align-items: center;
+}
+
+
+.footer p{
+    color: #F1F4F2;
+}
+
+.phone_text{
+    color: #F1F4F2;
+    font-size: 20px;
+}
+
+.contact{
+    margin-top: 15px;
+}
+
+.contact_nazvanie{
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 24px;
+}
+
+.image_phone{
+    width: 25px;
+    height: 25px;
+}
+
+.social_media a{
+    margin-right: 15px;
+}
+
+.social_media {
+    margin-bottom: 70px;
+}
+
+.under_text a{
+    color: #3B96FF;
+}
+
+.under_text{
+    margin-top: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style/style_basket.css">
+    <link rel="shortcut icon" href="image/лого иконка.png">
+</head>
+<body>
+    <section class="layout">
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="image/Лого.png" alt="Логотип"></a>
+            </div>
+            <ul class="menu">
+                <li><a href="о нас.html">О нас</a></li>
+                <li><a href="каталог.html">Каталог</a></li>
+                <li><a href="где нас найти.html">Где нас найти</a></li>
+            </ul>
+            <div class="icons">
+                <a href="корзина.html"><img src="image/Корзина.png">
+                </a>
+                <a href="авторизация.html"><img src="image/Вход.png">
+                </a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="authorization">
+                <div class="nazvanie">
+                    <p>Корзина</p>
+                </div>
+                <div class="linia_wrapper">
+                    <div class="linia_gor"></div>
+                </div>
+                <div class="korzina">
+                    <div class="tovar">
+                        <div class="product">
+                            <div style="margin-right: 20px;">
+                                <a href="#"><img src="image/крестик.png" alt="First Image"></a>
+                            </div>
+                            <div class="product-image">
+                                <img src="image/3d printer picaso 3d designer x s2 2.png" alt="First Image">
+                            </div>
+                            <div class="product-details">
+                                <h2>3D принтер Picaso 3D Designer X S2</h2>
+                                <p id="price">239000р.</p>
+                            </div>
+                            <div class="product-quantity">
+                                <a href="#"><img src="image/минус.png" alt="Third Image" onclick="increaseQuantity(-1)"></a>
+                                <input id="quantityInput" type="number" value="1">
+                                <a href="#"><img src="image/плюс.png" alt="Fourth Image" onclick="increaseQuantity(1)"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="total-price">
+                            <p id="totalPrice">Итого: 239000р.</p>
+                            <a href="оформление заказа.html" class="button">Оформить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <div class="logo_footer">
+              <a href="index.html"><img src="image/Логофутер.png" alt="Логотип"></a>
+            </div>
+            <div class="linia"></div>
+            <div class="contact">
+              <p class="contact_nazvanie">Контакты</p>
+              <div class="content" style="margin-bottom: 24px;">
+                <img src="image/телефон.png" alt="Изображение 2" class="image_phone">
+                <div class="phone_text" style="margin-left: 15px;">+7 (800) 555-35-35</div>
+              </div>
+              <div class="content" style="margin-bottom: 24px;">
+                <div class="phone_text" style="color: #B4B9BA;">Пн – Пт 10:00-18:30<br>Сб – Вс выходные</div>
+              </div>
+              <div class="content" style="margin-bottom: 24px;">
+                <img src="image/почта.png" alt="Изображение 2" class="image_phone">
+                <div class="phone_text" style="margin-left: 15px;">ThreeDevice@mail.ru</div>
+              </div>
+            </div>
+            <div class="linia"></div>
+            <div class="social-text">
+              <div class="social_media">
+                <a href="#"><img src="image/инста.png"></a>
+                <a href="#"><img src="image/вк.png"></a>
+                <a href="#"><img src="image/телеграм.png"></a>
+              </div>
+              <div class="under_text">
+                <p>© 2023 3Device - магазин по продаже<br>техники для трехмерной печати<br><a href="#">Политика конфиденциальности</a></div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <script>
+        var priceElement = document.getElementById("price");
+        var totalPriceElement = document.getElementById("totalPrice");
+        var pricePerUnit = 239_000; // Цена за одну единицу товара
+    
+        function increaseQuantity(value) {
+            var quantityInput = document.getElementById("quantityInput");
+            var currentQuantity = parseInt(quantityInput.value);
+            var newQuantity = currentQuantity + value;
+            if (newQuantity >= 1) {
+                quantityInput.value = newQuantity;
+                updatePrice();
+            }
+        }
+    
+        function updatePrice() {
+            var quantityInput = document.getElementById("quantityInput");
+            var currentQuantity = parseInt(quantityInput.value);
+            var totalPrice = pricePerUnit * currentQuantity;
+            priceElement.textContent = totalPrice + "р.";
+            totalPriceElement.textContent = "Итого: " + totalPrice + "р.";
+        }
+    </script>
+</body>
+</html>
